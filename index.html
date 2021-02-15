@@ -8,22 +8,31 @@
         <title>Typing Game</title>
     </head>
     <body>
+        <!-- Header for Game -->
         <header>
             <h1>Typing Game</h1>
         </header>
-        <div class="main-container">            
+        <!-- Main Container for Aligning + Justifying -->
+        <div class="main-container">
+            <!-- Container for the game box itself -->            
             <div class="container">
-                <h2 id="Main Word">Typing Game</h2>
+                <h2 id="wordDisplay">Typing Game</h2>
                 <hr>
                 <br>
+                <!-- Label for input -->
                 <label for="wordInput">Enter word here:</label>
                 <br>
+                <!--Input for words -->
                 <input type="text" id="wordInput" autocomplete="off">
                 <br><br>
+                <!-- Begin Button -->
                 <button id="start">Begin</button>
             </div>
-            <div class="timer">Time Left: 0</div>
-            <div class="score">Score: 0</div>
+            <!-- Timer -->
+            <div class="timer" id="time">Time Left: 0</div>
+            <!-- Scoreboard -->
+            <div class="score" id ="score">Score: 0</div>
         </div>
+        <script src="main.js"></script>
     </body>
 </html>
