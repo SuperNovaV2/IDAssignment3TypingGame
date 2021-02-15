@@ -118,7 +118,7 @@ DOM.start.addEventListener('click', start_game);
 }
 
 //API url to get random words
-const random_word_url = 'https://random-word-api.herokuapp.com/word?number=50';
+const random_word_url = 'https://random-word-api.herokuapp.com/word?number=150';
 
 //Gets the words and returns it
 function getRandomWord(){
