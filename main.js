@@ -1,3 +1,14 @@
+game({
+    DOM: {
+        //Assign the variables to the html ids/classes
+        start: window.start,
+        input: window.wordInput,
+        time: window.time,
+        score: window.score,
+        prompt: window.wordDisplay
+    }
+});
+
 function game({DOM}){
     //Game Statistics
     let stats = {
@@ -137,6 +148,7 @@ async function getNextWord(){
 }
 //To get a word
 function get_word({current_word}){
+    console.log(wordlist);
     //Gets a random word from the list through math random
     const new_word = wordlist[Math.floor(Math.random() * wordlist.length)];
     
@@ -168,16 +180,6 @@ function disable_input(input, handler){
     input.setAttribute('disabled', 'disabled');
 }
 
-game({
-    DOM: {
-        //Assign the variables to the html ids/classes
-        start: window.start,
-        input: window.wordInput,
-        time: window.time,
-        score: window.score,
-        prompt: window.wordDisplay
-    }
-});
 //Calling for API to get my word list
 getNextWord()
 
