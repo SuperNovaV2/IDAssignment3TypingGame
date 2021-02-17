@@ -13,20 +13,19 @@
         <header>
             <h1>Typing Game</h1>
         </header>
+        <div class="title">
+            <h2>Choose your difficulty</h2>
+        </div>
         <!-- Main Container for Aligning + Justifying -->
-        <div id="cntr">
-            <label for="opt1" class="radio">
-                <input type="radio" name="rdo" id="opt1" class="hidden" value="easy" checked="checked"/>
-                <span class="label"></span>Easy
-              </label>
-              <label for="opt2" class="radio">
-                <input type="radio" name="rdo" id="opt2" class="hidden" value="medium"/>
-                <span class="label"></span>Medium
-              </label>
-              <label for="opt3" class="radio">
-                <input type="radio" name="rdo" id="opt3" class="hidden" value="hard"/>
-                <span class="label"></span>Hard
-              </label>
+        <div class="cntr">
+            <input type="radio" id="opt1" name="rdo" value="easy" checked>
+            <label for="opt1" id="easy">Easy</label>
+
+            <input type="radio" id="opt2" name="rdo" value="medium">
+            <label for="opt2" id="medium">Medium</label>
+
+            <input type="radio" id="opt3" name="rdo" value="hard">
+            <label for="opt3" id="hard">Hard</label>             
         </div>
         <div class="main-container">
             <!-- Container for the game box itself -->            
