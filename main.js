@@ -18,8 +18,8 @@ function game({DOM}){
         stop_tick(){}
     };
     //Time when game starts
-    const new_time = function(){
-        stats.time = Number(60);
+    const new_time = function(){        
+        stats.time = Number(5);
         show_time(stats.time.val());
     };
     //Score when game starts
@@ -38,6 +38,7 @@ function game({DOM}){
         const user_input = ev.target.value;
         if (user_input == stats.word){
             add_score();
+            add_time();
             new_word();
             ev.target.value = '';
         }
@@ -114,7 +115,28 @@ const update_time = str => update_element(DOM.time, str);
 const update_score = score => update_element(DOM.score, `Score: ${score}`);
 //Update the next word through DOM to see
 const update_prompt = str => update_element(DOM.prompt, str);
-
+//On click of start button it finds the difficulty mode
+$("#start").on("click", function(event){
+    event.preventDefault();
+    result()
+});
+//Stores the difficulty result to be used for add time function
+function result(){
+    var difficulty = ($("input[name=rdo]:checked").val());
+    return difficulty 
+}
+//Add time to clock depending on difficulty chosen
+function add_time(){
+    if (result() == 'easy'){
+        show_time(stats.time.add(4))
+    }
+    else if (result() == 'medium'){
+        show_time(stats.time.add(3))
+    }
+    else if (result() == 'hard'){
+        show_time(stats.time.add(2))
+    }
+}
 //Show current time to see
 const show_time = time => update_time(`Time: ${format_time(time)}`);
 //Subtract time by 1 every second when it reaches 0 stops the game
@@ -182,5 +204,6 @@ function disable_input(input, handler){
 
 //Calling for API to get my word list
 getNextWord()
+
 
 
