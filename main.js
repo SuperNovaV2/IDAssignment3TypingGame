@@ -9,6 +9,30 @@ game({
     }
 });
 
+const wordDisplayElement = document.getElementById('wordDisplay')
+const wordInputElement = document.getElementById('wordInput')
+wordInputElement.addEventListener('input', () => {
+    const arrayWord = wordDisplayElement.querySelectorAll('span')
+    const arrayValue = wordInputElement.value.split('')
+    console.log(arrayWord)
+    arrayWord.forEach((characterSpan, index) => {
+        const character = arrayValue[index]
+        if (character == null) {
+            characterSpan.classList.remove('correct')
+            characterSpan.classList.remove('incorrect')
+        }
+        else if (character === characterSpan.innerText){
+            console.log("test")
+            characterSpan.classList.add('correct')
+            characterSpan.classList.remove('incorrect')
+        }
+        else{
+            characterSpan.classList.remove('correct')
+            characterSpan.classList.add('incorrect')
+        }
+    })
+})
+
 function game({DOM}){
     //Game Statistics
     let stats = {
@@ -30,7 +54,7 @@ function game({DOM}){
     //Get a new word out of the random words from API
     const new_word = function() {
         stats.word = get_word({current_word: stats.word});
-        update_prompt(stats.word)
+        
     };
     //If the word is typed correctly score is added and a new word is loaded
     const update_game = function(ev){
@@ -42,6 +66,7 @@ function game({DOM}){
             new_word();
             ev.target.value = '';
         }
+        
     };
     //When game start it loads in all the new functions shown before
     const start_game = function(){
@@ -173,13 +198,21 @@ function get_word({current_word}){
     console.log(wordlist);
     //Gets a random word from the list through math random
     const new_word = wordlist[Math.floor(Math.random() * wordlist.length)];
-    
+    wordDisplayElement.innerHTML = ''
+        new_word.split('').forEach(character => {
+            var characterSpan = document.createElement('span');
+            characterSpan.innerText = character;
+            wordDisplayElement.appendChild(characterSpan);
+        })
     //Checks if the word is same as the word displayed on screen if so runs function again
     if (new_word == current_word){
+        
         return get_word({current_word})
     }
-
-    return new_word;
+    else{        
+        return new_word
+    }
+    
 }
 
 //To be used in start game
