@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 header{
-    background-color: #705BFF;
+    background-color: #6c757d;
     text-align: center;
 }
 hr{
@@ -14,7 +14,7 @@ hr{
 body{
     margin: 0;
     color: white;
-    background-color: gray;
+    background-color: #343a40;
 }
 
 h2{
@@ -33,7 +33,7 @@ label{
     font-size: 17px;
 }
 .container{
-    background-color: darkgray;
+    background-color: #6c757d;
     position: relative;
     padding: 16px;
     border-radius: .5rem;
