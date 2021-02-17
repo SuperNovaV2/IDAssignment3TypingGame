@@ -17,7 +17,7 @@
             <h2>Choose your difficulty</h2>
         </div>
         <!-- Main Container for Aligning + Justifying -->
-        <div class="cntr">
+        <div class="difficulty">
             <input type="radio" id="opt1" name="rdo" value="easy" checked>
             <label for="opt1" id="easy">Easy</label>
 
@@ -40,13 +40,15 @@
                 <input type="text" id="wordInput" autocomplete="off">
                 <br><br>
                 <!-- Begin Button -->
-                <button id="start">Begin</button>
+                <button id="start" class="start-btn">Begin</button>
             </div>
+        </div>
+        <div class="statistics">
             <!-- Timer -->
             <div class="timer" id="time">Time Left: 0</div>
             <!-- Scoreboard -->
             <div class="score" id ="score">Score: 0</div>
-        </div>
+        </div>    
         <script src="main.js"></script>
     </body>
 </html>
