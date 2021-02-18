@@ -163,9 +163,10 @@ h1{
     transition: all 0.4s ease 0s;
     }
 .correct{
-    color: green
+    color: #99cc00;
 }
 .incorrect{
-    color: red;
+    color: #803333;
     text-decoration: underline;
+    background-color: #f0a3a3;
 }
