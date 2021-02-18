@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Typing Game</title>
+    </head>
+    <body>
+        <!-- Header for Game -->
+        <header>
+            <h1>Typing Game</h1>
+        </header>
+        <!-- Title for difficulty -->
+        <div class="title">
+            <h2>Choose your difficulty</h2>
+        </div>
+        <!-- Various difficulty options -->
+        <div class="difficulty">
+            <input type="radio" id="opt1" name="rdo" value="easy" checked>
+            <label for="opt1" id="easy">Easy</label>
+
+            <input type="radio" id="opt2" name="rdo" value="medium">
+            <label for="opt2" id="medium">Medium</label>
+
+            <input type="radio" id="opt3" name="rdo" value="hard">
+            <label for="opt3" id="hard">Hard</label>             
+        </div>
+        <!-- Main Container for Aligning + Justifying -->
+        <div class="main-container">
+            <!-- Container for the game box itself -->            
+            <div class="container">
+                <h2 id="wordDisplay">Typing Game</h2>
+                <hr>
+                <br>
+                <!-- Label for input -->
+                <label for="wordInput">Enter word here:</label>
+                <br>
+                <!--Input for words -->
+                <input type="text" id="wordInput" autocomplete="off">
+                <br><br>
+                <!-- Begin Button -->
+                <button id="start" class="start-btn">Begin</button>
+            </div>
+        </div>
+        <div class="statistics">
+            <!-- Timer -->
+            <div class="timer" id="time">Time Left: 0</div>
+            <!-- Scoreboard -->
+            <div class="score" id ="score">Score: 0</div>
+        </div>    
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -41,6 +41,16 @@ label{
     text-align: center;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
+.container-instructions{
+    margin-top: 80px;
+    background-color: #6c757d;
+    position: relative;
+    padding: 16px;
+    border-radius: .5rem;
+    width: 700px;
+    text-align: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
 input{
     border: 0;
     border-radius: 4px;
@@ -184,4 +194,14 @@ h1{
     opacity: .01;
     transform: translateY(40px);
     transition: all 300ms ease-in-out;
+}
+p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+#instructions{
+    font-size: 36px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 }

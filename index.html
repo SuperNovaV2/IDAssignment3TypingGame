@@ -13,42 +13,16 @@
         <header>
             <h1>Typing Game</h1>
         </header>
-        <div class="title">
-            <h2>Choose your difficulty</h2>
-        </div>
-        <!-- Main Container for Aligning + Justifying -->
-        <div class="difficulty">
-            <input type="radio" id="opt1" name="rdo" value="easy" checked>
-            <label for="opt1" id="easy">Easy</label>
-
-            <input type="radio" id="opt2" name="rdo" value="medium">
-            <label for="opt2" id="medium">Medium</label>
-
-            <input type="radio" id="opt3" name="rdo" value="hard">
-            <label for="opt3" id="hard">Hard</label>             
-        </div>
         <div class="main-container">
-            <!-- Container for the game box itself -->            
-            <div class="container">
-                <h2 id="wordDisplay">Typing Game</h2>
-                <hr>
-                <br>
-                <!-- Label for input -->
-                <label for="wordInput">Enter word here:</label>
-                <br>
-                <!--Input for words -->
-                <input type="text" id="wordInput" autocomplete="off">
-                <br><br>
-                <!-- Begin Button -->
-                <button id="start" class="start-btn">Begin</button>
+            <div class="container-instructions">
+                <h2 id="instructions">Instructions</h2>
+                <p>Type the word displayed before the time runs out. Each correct word gives time.<br>
+                    The amount of time gained is dependent on the difficulty that you chose.<br>
+                    Easy gives 4 seconds, Medium gives 3 and Hard gives 2.<br>
+                    Try to get a high score! Good Luck.<br>
+                </p>
             </div>
+            <a href=""></a>
         </div>
-        <div class="statistics">
-            <!-- Timer -->
-            <div class="timer" id="time">Time Left: 0</div>
-            <!-- Scoreboard -->
-            <div class="score" id ="score">Score: 0</div>
-        </div>    
-        <script src="main.js"></script>
     </body>
 </html>
