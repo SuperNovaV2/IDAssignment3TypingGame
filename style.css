@@ -175,7 +175,7 @@ h1{
 }
 .feactive{
     opacity: 1;
-    transition: all 350ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 .fl {
     opacity: 1;
@@ -183,5 +183,5 @@ h1{
 .flactive{
     opacity: .01;
     transform: translateY(40px);
-    transition: all 350ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }

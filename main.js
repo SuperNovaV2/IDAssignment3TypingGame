@@ -9,23 +9,31 @@ game({
     }
 });
 
+//Get the word display HTML element
 const wordDisplayElement = document.getElementById('wordDisplay')
+//Get the word input HTML element
 const wordInputElement = document.getElementById('wordInput')
+//On input runs function
 wordInputElement.addEventListener('input', () => {
+    //Selects all word display HTML element that has span tag
     const arrayWord = wordDisplayElement.querySelectorAll('span')
+    //Gets the value u typed in the input
     const arrayValue = wordInputElement.value.split('')
-    console.log(arrayWord)
+    //For each character in the word
     arrayWord.forEach((characterSpan, index) => {
+        //Gets the character you inputed
         const character = arrayValue[index]
+        //If you didnt input anything no css class is added
         if (character == null) {
             characterSpan.classList.remove('correct')
             characterSpan.classList.remove('incorrect')
         }
+        //If your input is equal to character in the word displayed adds a css class
         else if (character === characterSpan.innerText){
-            console.log("test")
             characterSpan.classList.add('correct')
             characterSpan.classList.remove('incorrect')
         }
+        //If your input is not equal to a character in the word displayed removes a css class
         else{
             characterSpan.classList.remove('correct')
             characterSpan.classList.add('incorrect')
@@ -42,26 +50,31 @@ function game({DOM}){
         stop_tick(){}
     };
     //Time when game starts
-    const new_time = function(){        
+    const new_time = function(){
+        //Base start time      
         stats.time = Number(5);
         show_time(stats.time.val());
     };
     //Score when game starts
     const new_score = function(){
+        //Base score
         stats.score = Number(0);
         update_score(stats.score.val());
     };
     //Get a new word out of the random words from API
     const new_word = function() {
+        //Gets new word from other function and stores it in stats
         stats.word = get_word({current_word: stats.word});
+        //Adds in fade in animation
         wordDisplayElement.classList.add('fe')
         wordDisplayElement.classList.add('feactive')
+        //Removes fade in animation after done
         setTimeout(
             () => {
                 wordDisplayElement.classList.remove('fe')
                 wordDisplayElement.classList.remove('feactive')                    
             },
-            350)
+            300)
                    
     };
     //If the word is typed correctly score is added and a new word is loaded
@@ -69,8 +82,10 @@ function game({DOM}){
         //User input is the event target value this is how to get the value user typed in
         const user_input = ev.target.value;
         if (user_input == stats.word){
+            //Adds in fade out animation
             wordDisplayElement.classList.add('fl')
             wordDisplayElement.classList.add('flactive')
+            //Removes fade out animation after done
             setTimeout(
                 () => {
                     wordDisplayElement.classList.remove('fl')
@@ -78,9 +93,12 @@ function game({DOM}){
                     new_word();
                     
                 },
-                350)   
+                300)
+                //Adds score
                 add_score();
-                add_time();                
+                //Adds time
+                add_time();
+                //Reset user value               
                 ev.target.value = '';         
             
         }
@@ -88,11 +106,17 @@ function game({DOM}){
     };
     //When game start it loads in all the new functions shown before
     const start_game = function(){
+        //Start new time
         new_time();
+        //Start new score
         new_score();
+        //Generate first word
         new_word();
+        //Changes input from disabled to usable
         prepare_input(DOM.input, update_game);
+        //Starts time countdown
         stats.stop_tick = tick(countdown);
+        //Disables being able to click on start game again
         DOM.start.removeEventListener('click', start_game);
     };
     //Stops game when timer reaches 0
@@ -170,12 +194,15 @@ function result(){
 }
 //Add time to clock depending on difficulty chosen
 function add_time(){
+    //Easy is 4 seconds every correct word
     if (result() == 'easy'){
         show_time(stats.time.add(4))
     }
+    //Medium is 3 seconds every correct word
     else if (result() == 'medium'){
         show_time(stats.time.add(3))
     }
+    //Hard is 2 seconds every correct word
     else if (result() == 'hard'){
         show_time(stats.time.add(2))
     }
@@ -213,7 +240,6 @@ async function getNextWord(){
 }
 //To get a word
 function get_word({current_word}){
-    console.log(wordlist);
     //Gets a random word from the list through math random
     const new_word = wordlist[Math.floor(Math.random() * wordlist.length)];
     wordDisplayElement.innerHTML = ''
