@@ -65,6 +65,14 @@ input{
     justify-content: center;
     margin-top: 30px;
 }
+.play-button{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 80px;
+    margin-left: 190px;
+}
+
 .timer{
     margin-right: 185px;
     font-size: 24px;
@@ -205,3 +213,54 @@ p{
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
+
+a {
+    transform: translate(-50%, -50%);
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 0.5em 2em;
+    border: 2px solid white;
+    transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  a::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: white;
+    transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: -1;
+  }
+  a::after {
+    content: "";
+    display: inline-block;
+    background-image: url(icons/arrow.png);
+    position: absolute;
+    top: 0;
+    left: calc(100% - 3em);
+    right: 3em;
+    bottom: 0;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  a:hover {
+    padding: 0.5em 3.5em 0.5em 0.5em;
+  }
+  a:hover::before {
+    left: calc(100% - 3em);
+    right: 0;
+    transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  a:hover::after {
+    right: 0;
+    transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  
