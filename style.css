@@ -246,7 +246,7 @@ a {
   a::after {
     content: "";
     display: inline-block;
-    background-image: url(icons/arrow.png);
+    background-image: url(Icons/arrow.png);
     position: absolute;
     top: 0;
     left: calc(100% - 3em);
