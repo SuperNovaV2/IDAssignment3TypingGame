@@ -170,3 +170,18 @@ h1{
     text-decoration: underline;
     background-color: #f0a3a3;
 }
+.fe {
+    opacity: .01;
+}
+.feactive{
+    opacity: 1;
+    transition: all 350ms ease-in-out;
+}
+.fl {
+    opacity: 1;
+}
+.flactive{
+    opacity: .01;
+    transform: translateY(40px);
+    transition: all 350ms ease-in-out;
+}

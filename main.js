@@ -54,17 +54,35 @@ function game({DOM}){
     //Get a new word out of the random words from API
     const new_word = function() {
         stats.word = get_word({current_word: stats.word});
-        
+        wordDisplayElement.classList.add('fe')
+        wordDisplayElement.classList.add('feactive')
+        setTimeout(
+            () => {
+                wordDisplayElement.classList.remove('fe')
+                wordDisplayElement.classList.remove('feactive')                    
+            },
+            350)
+                   
     };
     //If the word is typed correctly score is added and a new word is loaded
     const update_game = function(ev){
         //User input is the event target value this is how to get the value user typed in
         const user_input = ev.target.value;
         if (user_input == stats.word){
-            add_score();
-            add_time();
-            new_word();
-            ev.target.value = '';
+            wordDisplayElement.classList.add('fl')
+            wordDisplayElement.classList.add('flactive')
+            setTimeout(
+                () => {
+                    wordDisplayElement.classList.remove('fl')
+                    wordDisplayElement.classList.remove('flactive')
+                    new_word();
+                    
+                },
+                350)   
+                add_score();
+                add_time();                
+                ev.target.value = '';         
+            
         }
         
     };
@@ -104,7 +122,7 @@ function tick(fn){
     let counter = 0;
     //Adds 1 to counter
     let callback = () => fn(counter++)
-    //Set for 1 second so it adds 1 to counter each second
+    //Set to run every 1 second
     let _interval = setInterval(callback, 1000)
     return () => clearInterval(_interval)
     
