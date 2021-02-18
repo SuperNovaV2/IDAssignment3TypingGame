@@ -26,8 +26,14 @@ h2{
 .main-container{
     display: flex;
     justify-content: center;
-    align-items:baseline;
+    align-items:center;
     margin-top: 100px;
+}
+.animation-container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top: 50px;
 }
 label{
     font-size: 17px;
