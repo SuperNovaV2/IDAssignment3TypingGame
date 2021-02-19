@@ -1,10 +1,12 @@
 *{
     box-sizing: border-box;
 }
+/* CSS for header */ 
 header{
     background-color: #6c757d;
     text-align: center;
 }
+/* Line below word being typed (Design)*/
 hr{
     background-image: linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,0.75), rgba(0,0,0,0));
     border: 0;
@@ -23,12 +25,14 @@ h2{
     border-radius: 4px;
     margin: 0 0 3px;
 }
+/* Main Container for aligning*/
 .main-container{
     display: flex;
     justify-content: center;
     align-items:center;
     margin-top: 100px;
 }
+/* Animation container for aligning (Lottie Player)*/
 .animation-container{
     display: flex;
     justify-content: center;
@@ -38,6 +42,7 @@ h2{
 label{
     font-size: 17px;
 }
+/* Container for the game */
 .container{
     background-color: #6c757d;
     position: relative;
@@ -47,6 +52,7 @@ label{
     text-align: center;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
+/* Container for instructions */
 .container-instructions{
     margin-top: 80px;
     background-color: #6c757d;
@@ -57,6 +63,7 @@ label{
     text-align: center;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
+/* Input where user types word */
 input{
     border: 0;
     border-radius: 4px;
@@ -65,12 +72,14 @@ input{
     margin-top: 10px;
 
 }
+/* Align timer and score*/
 .statistics{
     display: flex;
     align-content: center;
     justify-content: center;
     margin-top: 30px;
 }
+/* Align Play button */
 .play-button{
     display: flex;
     align-content: center;
@@ -78,15 +87,17 @@ input{
     margin-top: 80px;
     margin-left: 190px;
 }
-
+/* Adjust timer */
 .timer{
     margin-right: 185px;
     font-size: 24px;
 }
+/* Adjust score */
 .score{
     margin-left: 185px;
     font-size: 24px;
 }
+/* Margin for begin button */
 button{
     margin-bottom: 20px;
 }
@@ -94,10 +105,7 @@ h1{
     margin: 0;
     padding: 5px;
 }
-.word{
-    margin-bottom: 16px;
-    text-align: center;
-}
+/* Style for input */
 .wordInput{
     background-color: transparent;
     background-color: #6a737a;
@@ -106,24 +114,28 @@ h1{
     height: 32px;
     resize: none;
 }
+/* When focused */
 .wordInput:focus{
     border-color: black;
 }
-
+/* Difficulty radio button */
 .difficulty input[type="radio"] {
     opacity: 0;
     position: fixed;
     width: 0;
 }
+/* Align difficulty */
 .difficulty{
     display: flex;
     align-content: center;
     justify-content: center;
 }
+/* Difficulty title */
 .title{
     margin-top: 100px;
     text-align: center;
 }
+/* Difficulty label */
 .difficulty label{
     display: inline-block;
     padding: 15px 30px;
@@ -133,39 +145,40 @@ h1{
     margin: 5px;
     border: 2px solid transparent;
 }
+/* Easy difficulty */
 .difficulty #easy{
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
-
+/* Medium difficulty */
 .difficulty #medium{
     background-color: #f0ad4e;
     border-color: #eea236;
 }
-
+/* Hard difficulty */
 .difficulty #hard{
     background-color: #d9534f;
     border-color: #d43f3a;
 }
-
+/* When checked */
 .difficulty input[type="radio"]:checked + #easy {
     background-color: #449d44;
     border-color: #398439;
     box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%);
 }
-
+/* When checked */
 .difficulty input[type="radio"]:checked + #medium {
     background-color: #ec971f;
     border-color: #d58512;
     box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%);
 }
-
+/* When checked */
 .difficulty input[type="radio"]:checked + #hard {
     background-color: #c9302c;
     border-color: #ac2925;
     box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%);
 }
-
+/* Begin button */
 .start-btn {
     color: #fff !important;
     text-transform: uppercase;
@@ -180,30 +193,36 @@ h1{
     border: none;
     transition: all 0.4s ease 0s;
 }
-
+/* Begin button on hover */
 .start-btn:hover {
     text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
     box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.4s ease 0s;
     }
+/* CSS when letter typed is correct */    
 .correct{
     color: #99cc00;
 }
+/* CSS when letter typed is incorrect */ 
 .incorrect{
     color: #803333;
     text-decoration: underline;
     background-color: #f0a3a3;
 }
+/* For fade in animation for new words */ 
 .fe {
     opacity: .01;
 }
+/* For fade in animation for new words */ 
 .feactive{
     opacity: 1;
     transition: all 300ms ease-in-out;
 }
+/* For fade out animation for finished words */ 
 .fl {
     opacity: 1;
 }
+/* For fade in animation for finished words */ 
 .flactive{
     opacity: .01;
     transform: translateY(40px);
@@ -213,13 +232,13 @@ p{
     font-size: 20px;
     line-height: 1.5;
 }
-
+/* Insturctions box color */ 
 #instructions{
     font-size: 36px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
-
+/* Play button in instructions page */ 
 a {
     transform: translate(-50%, -50%);
     color: white;
@@ -231,6 +250,7 @@ a {
     border: 2px solid white;
     transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
   }
+  /* Play button in instructions page */ 
   a::before {
     content: "";
     display: inline-block;
@@ -243,6 +263,7 @@ a {
     transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
     z-index: -1;
   }
+  /* Play button in instructions page */ 
   a::after {
     content: "";
     display: inline-block;
@@ -257,43 +278,48 @@ a {
     background-position: center;
     transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
   }
+  /* Play button in instructions page */ 
   a:hover {
     padding: 0.5em 3.5em 0.5em 0.5em;
   }
+  /* Play button in instructions page */ 
   a:hover::before {
     left: calc(100% - 3em);
     right: 0;
     transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
   }
+  /* Play button in instructions page */ 
   a:hover::after {
     right: 0;
     transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
   }
+  /* Bounce animation */ 
   label:hover {
     animation: bounce 0.5s linear;
     cursor: pointer;
 }
-
-@keyframes bounce {
-    20% {
-        transform: translateY(-6px);
+/* Bounce animation */ 
+    @keyframes bounce {
+        20% {
+            transform: translateY(-6px);
+        }
+        40% {
+            transform: translateY(0px);
+        }
+        80% {
+            transform: translateY(-2px);
+        }
+        100% {
+            transform: translateY(0);
+        }
     }
-    40% {
-        transform: translateY(0px);
-    }
-    80% {
-        transform: translateY(-2px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
+/* Lottie loading animation */ 
   lottie-player{
       width: 1500px;
       height: 800px;
 
   }
+/* Responsive for phone(IPHONE6+ and above) */ 
   @media only screen and (max-width: 600px) {
     p{
         font-size: 16px;
@@ -318,6 +344,7 @@ a {
         width: 400px;
     }
   }
+/* Responsive for phone(IPHONE6 and below) */ 
   @media only screen and (max-width: 375px) {
     p{
         font-size: 16px;
