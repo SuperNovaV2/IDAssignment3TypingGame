@@ -3,7 +3,7 @@
 }
 /* CSS for header */ 
 header{
-    background-color: #6c757d;
+    background-color: #000000;
     text-align: center;
 }
 /* Line below word being typed (Design)*/
@@ -16,7 +16,12 @@ hr{
 body{
     margin: 0;
     color: white;
-    background-color: #343a40;
+    background-color: #87348a;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
 }
 
 h2{
@@ -24,6 +29,7 @@ h2{
     padding: 8px;
     border-radius: 4px;
     margin: 0 0 3px;
+    margin-bottom: 40px;
 }
 /* Main Container for aligning*/
 .main-container{
@@ -44,7 +50,7 @@ label{
 }
 /* Container for the game */
 .container{
-    background-color: #6c757d;
+    background-color: #87348a;
     position: relative;
     padding: 16px;
     border-radius: .5rem;
@@ -183,7 +189,7 @@ h1{
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #60a3bc;
+    background: #bd5d9d;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 15px;
@@ -192,12 +198,14 @@ h1{
     display: inline-block;
     border: none;
     transition: all 0.4s ease 0s;
+    
 }
 /* Begin button on hover */
 .start-btn:hover {
     text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
     box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.4s ease 0s;
+    transform: scale(1.5); 
     }
 /* CSS when letter typed is correct */    
 .correct{
