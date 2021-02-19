@@ -1,3 +1,3 @@
-const game = () => window.location.href = "game.html"
+const game = () => window.location.href = "game.html";
 
-setTimeout(game, 4800)
+setTimeout(game, 4800);
