@@ -1,4 +1,5 @@
-# Website done by Ellappan Keerthivasan(S10205505) and syed sharuk (S10194023)
+# Website done by Ellappan Keerthivasan(S10205505)
+- I would like to disclose that this entire website is done by myself only and my partner has not put in any form of contribution at all. Hence, i would like for you to consider this as my individual assignment and not pair work.
 # NitroTyper Game
 In this project the goal of the project is to make a typing/speed typing game where the user will type the random words gotten through an api before the time given runs out. If the word is typed out correctly user will gain 1 score. This project will fall under Theme 4 Gamer Crazy and is casual, entertaining and educational. Its a game you can just play to test your skills to have fun making it casual and entertaining it is also educational as you will be able to learn new words through the random words you will be typing all while improving your typing speed which is useful in this technology-based era. The game will also have different difficulty modes such as easy, medium and hard so people from all different types of typing speed will be able to enjoy themselves or for those who would like more of a challenge.
 # Design Process
