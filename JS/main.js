@@ -10,36 +10,36 @@ game({
 });
 
 //Get the word display HTML element
-const wordDisplayElement = document.getElementById('wordDisplay')
+const wordDisplayElement = document.getElementById('wordDisplay');
 //Get the word input HTML element
-const wordInputElement = document.getElementById('wordInput')
+const wordInputElement = document.getElementById('wordInput');
 //On input runs function
 wordInputElement.addEventListener('input', () => {
     //Selects all word display HTML element that has span tag
-    const arrayWord = wordDisplayElement.querySelectorAll('span')
+    const arrayWord = wordDisplayElement.querySelectorAll('span');
     //Gets the value u typed in the input
-    const arrayValue = wordInputElement.value.split('')
+    const arrayValue = wordInputElement.value.split('');
     //For each character in the word
     arrayWord.forEach((characterSpan, index) => {
         //Gets the character you inputed
-        const character = arrayValue[index]
+        const character = arrayValue[index];
         //If you didnt input anything no css class is added
         if (character == null) {
-            characterSpan.classList.remove('correct')
-            characterSpan.classList.remove('incorrect')
+            characterSpan.classList.remove('correct');
+            characterSpan.classList.remove('incorrect');
         }
         //If your input is equal to character in the word displayed adds a css class
         else if (character === characterSpan.innerText){
-            characterSpan.classList.add('correct')
-            characterSpan.classList.remove('incorrect')
+            characterSpan.classList.add('correct');
+            characterSpan.classList.remove('incorrect');
         }
         //If your input is not equal to a character in the word displayed removes a css class
         else{
-            characterSpan.classList.remove('correct')
-            characterSpan.classList.add('incorrect')
+            characterSpan.classList.remove('correct');
+            characterSpan.classList.add('incorrect');
         }
-    })
-})
+    });
+});
 
 function game({DOM}){
     //Game Statistics
@@ -66,15 +66,15 @@ function game({DOM}){
         //Gets new word from other function and stores it in stats
         stats.word = get_word({current_word: stats.word});
         //Adds in fade in animation
-        wordDisplayElement.classList.add('fe')
-        wordDisplayElement.classList.add('feactive')
+        wordDisplayElement.classList.add('fe');
+        wordDisplayElement.classList.add('feactive');
         //Removes fade in animation after done
         setTimeout(
             () => {
-                wordDisplayElement.classList.remove('fe')
-                wordDisplayElement.classList.remove('feactive')                    
+                wordDisplayElement.classList.remove('fe');
+                wordDisplayElement.classList.remove('feactive');                    
             },
-            300)
+            300);
                    
     };
     //If the word is typed correctly score is added and a new word is loaded
@@ -83,17 +83,17 @@ function game({DOM}){
         const user_input = ev.target.value;
         if (user_input == stats.word){
             //Adds in fade out animation
-            wordDisplayElement.classList.add('fl')
-            wordDisplayElement.classList.add('flactive')
+            wordDisplayElement.classList.add('fl');
+            wordDisplayElement.classList.add('flactive');
             //Removes fade out animation after done
             setTimeout(
                 () => {
-                    wordDisplayElement.classList.remove('fl')
-                    wordDisplayElement.classList.remove('flactive')
+                    wordDisplayElement.classList.remove('fl');
+                    wordDisplayElement.classList.remove('flactive');
                     new_word();
                     
                 },
-                300)
+                300);
                 //Adds score
                 add_score();
                 //Adds time
@@ -133,7 +133,7 @@ function game({DOM}){
             disable_input(DOM.input, update_game);
             //Enable being able to start a new game
             DOM.start.addEventListener('click', start_game);
-            DOM.start.focus()
+            DOM.start.focus();
         }
     };
 
@@ -145,10 +145,10 @@ function format_time(time){
 function tick(fn){
     let counter = 0;
     //Adds 1 to counter
-    let callback = () => fn(counter++)
+    let callback = () => fn(counter++);
     //Set to run every 1 second
-    let _interval = setInterval(callback, 1000)
-    return () => clearInterval(_interval)
+    let _interval = setInterval(callback, 1000);
+    return () => clearInterval(_interval);
     
 }
 
@@ -158,17 +158,17 @@ function Number(initial){
     return {
         //Method to be used
         val() {
-            return stats
+            return stats;
         },
         //Method to be used
         add(num){
             stats += num;
-            return stats
+            return stats;
         },
         //Method to be used
         subtract(num){
             stats -= num;
-            return stats
+            return stats;
         }
     };
 }
@@ -185,26 +185,26 @@ const update_prompt = str => update_element(DOM.prompt, str);
 //On click of start button it finds the difficulty mode
 $("#start").on("click", function(event){
     event.preventDefault();
-    result()
+    result();
 });
 //Stores the difficulty result to be used for add time function
 function result(){
     var difficulty = ($("input[name=rdo]:checked").val());
-    return difficulty 
+    return difficulty; 
 }
 //Add time to clock depending on difficulty chosen
 function add_time(){
     //Easy is 4 seconds every correct word
     if (result() == 'easy'){
-        show_time(stats.time.add(4))
+        show_time(stats.time.add(4));
     }
     //Medium is 3 seconds every correct word
     else if (result() == 'medium'){
-        show_time(stats.time.add(3))
+        show_time(stats.time.add(3));
     }
     //Hard is 2 seconds every correct word
     else if (result() == 'hard'){
-        show_time(stats.time.add(2))
+        show_time(stats.time.add(2));
     }
 }
 //Show current time to see
@@ -229,32 +229,32 @@ function getRandomWord(){
         .then(response => response.json())
         .then(responseData => {
             return responseData;
-        })        
+        });        
 }
 //Array to store the random words
-wordlist = []
+wordlist = [];
 //Async to make sure finishes the promise first then assigns the result to the array to store
 async function getNextWord(){
-    const words = await getRandomWord()
+    const words = await getRandomWord();
     wordlist = words;
 }
 //To get a word
 function get_word({current_word}){
     //Gets a random word from the list through math random
     const new_word = wordlist[Math.floor(Math.random() * wordlist.length)];
-    wordDisplayElement.innerHTML = ''
+    wordDisplayElement.innerHTML = '';
         new_word.split('').forEach(character => {
             var characterSpan = document.createElement('span');
             characterSpan.innerText = character;
             wordDisplayElement.appendChild(characterSpan);
-        })
+        });
     //Checks if the word is same as the word displayed on screen if so runs function again
     if (new_word == current_word){
         
-        return get_word({current_word})
+        return get_word({current_word});
     }
     else{        
-        return new_word
+        return new_word;
     }
     
 }
@@ -280,7 +280,7 @@ function disable_input(input, handler){
 }
 
 //Calling for API to get my word list
-getNextWord()
+getNextWord();
 
 
 
