@@ -269,4 +269,57 @@ a {
     right: 0;
     transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
   }
+  lottie-player{
+      width: 1500px;
+      height: 800px;
+
+  }
+  @media only screen and (max-width: 600px) {
+    p{
+        font-size: 16px;
+    }
+    lottie-player{
+        width: 500px;
+        height: 500px;
+    }
+    .container{
+        width: 390px
+    }
+    #wordInput{
+        width: 300px;
+    }
+    .timer{
+        margin-right: 70px;
+    }
+    .score{
+        margin-left: 70px;
+    }
+    .container-instructions{
+        width: 400px;
+    }
+  }
+  @media only screen and (max-width: 375px) {
+    p{
+        font-size: 16px;
+    }
+    lottie-player{
+        width: 500px;
+        height: 500px;
+    }
+    .container{
+        width: 355px
+    }
+    #wordInput{
+        width: 300px;
+    }
+    .timer{
+        margin-right: 60px;
+    }
+    .score{
+        margin-left: 60px;
+    }
+    .container-instructions{
+        width: 360px;
+    }
+  }
   
