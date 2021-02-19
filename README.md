@@ -24,7 +24,7 @@ Score - Allows the user to see their current score in the game
 - Javascript
     - This project uses javascript to make the game itself.
 - [RandomWordAPI](https://random-word-api.herokuapp.com/home)
--Adobe XD
+- Adobe XD
     - To make the wireframe for this project
 # Testing
 - Automated Testing
