@@ -78,6 +78,8 @@ Score - Allows the user to see their current score in the game
     - Downloading this website locally:
         - After signing into GitHub/Making a new account clone the project
         - Download the code and open the website through a source-code editor like visual studio code
+# Pitch
+[Pitch](https://drive.google.com/file/d/1_MYyBaQS3opBx5nb5PMNOe58zHJ2xsmZ/view?usp=sharing)
 # Credits
 - Content
     - [Youtube video #1](https://www.youtube.com/watch?v=R-7eQIHRszQ)
